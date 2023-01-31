@@ -41,3 +41,11 @@ let sumOfRange = (n) => {
     return total;
 }
 
+// intital example refactored
+let sumOfRangeRecursive = (n, total = 0) => {   
+//    this is a guard clause which will safeguard from an infinite loop
+    if(n <= 0) {
+       return total;
+    }
+    return sumOfRangeRecursive(n - 1, total + n);
+}
