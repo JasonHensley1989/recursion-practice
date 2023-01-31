@@ -52,3 +52,14 @@ let sumOfRangeRecursive = (n, total = 0) => {
     // it is n - 1 because of the iteration that is taking place each time the guard clause isnt met.
     return sumOfRangeRecursive(n-1, total + n);
 }
+
+// This is the process occuring step by step until the functions recursive requiremenet is met.
+
+        // sumOfRangeRecursive(3, 0)
+        //     sumOfRangeRecursive(2, 3)
+        //         sumOfRangeRecursive(1, 5)
+        //             sumOfRangeRecursive(0, 6)
+        //             return 6
+        //         return 6
+        //     return 6
+        // return 6
