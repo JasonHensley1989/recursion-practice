@@ -63,3 +63,57 @@ let sumOfRangeRecursive = (n, total = 0) => {
         //         return 6
         //     return 6
         // return 6
+
+// let printChildren = (t) => {
+//     // ???
+// }
+
+let printChildrenRecursive = (t) => {
+    // this initial guard is if it is equal to zero the loop is immediately exited
+    if(t.children.length === 0) {
+        return;
+    }
+    t.children.forEach(child => {
+        console.log(child.name)
+        printChildrenRecursive(child)
+    })
+}
+
+// So this code works as such: When the initial function call occurs it calls again to work through the 
+// names at the same level that it has now moved too. In this case starting with Jeff, the onto Samuel 
+// and Dan, the actual calls look like this
+
+            // printChildrenRecursive('Jeff')
+            //     // Samuel contains no children in the array so the only thing needed to return is name
+            //     printChildrenRecursive("Samuel")
+            //     return
+            //     // Dan contains two children with no further children so the return
+            //     printChildrenRecursive("Dan")
+            //         // these two will loop first before the return of "Dan"
+            //         printChildrenRecursive("Jerry")
+            //         return
+            //         printChildrenRecursive("Jason")
+            //         return 
+            //     return
+
+
+
+
+
+
+const tree = {
+    name: 'Jeff',
+    children: [
+        {
+            name: "Samuel",
+            children: []
+        }, 
+        {
+            name: "Dan",
+            children: [
+                {name: "Jerry", children: []},
+                {name: "Jason", children: []}
+            ]
+        }
+    ]
+}
