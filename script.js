@@ -47,5 +47,8 @@ let sumOfRangeRecursive = (n, total = 0) => {
     if(n <= 0) {
        return total;
     }
-    return sumOfRangeRecursive(n - 1, total + n);
+    // if the guard clause is disregarded this code will execute, allowing the code to recurse
+    // to return back to the initial if statement again and again until the clause is met.
+    // it is n - 1 because of the iteration that is taking place each time the guard clause isnt met.
+    return sumOfRangeRecursive(n-1, total + n);
 }
